@@ -42,11 +42,12 @@ let filme4 = {
 
 
 function FnMontarCartao(filmeAtual){
-    console.log(`<div class="card-filme">
+    document.querySelector(".lista-filmes").innerHTML = `
+    <div class="card-filme">
             <img src="img/${filmeAtual.foto}">
             <h3>${filmeAtual.titulo}</h3>
             <span>⭐ ${filmeAtual.avaliacao}</span>
-        </div> `)
+        </div> `
 }
 
 
