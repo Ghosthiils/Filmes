@@ -4,7 +4,7 @@ console.log("Funcionou")
 
 let filme1 = {
     titulo: "Jurassic Park ",
-    foto: "Filme.webp",
+    foto: "Filme1.webp",
     avaliacao: "10/10",
     duracao: "1h50"
 
@@ -38,11 +38,18 @@ let filme4 = {
     duracao: "1h50"
 
 }
+let filme5 = {
+    titulo: "Homem-Aranha",
+    foto: "FILMEH.jpg",
+    avaliacao: "6/10",
+    duracao: "5h"
+    
+}
 
 
 
 function FnMontarCartao(filmeAtual){
-    document.querySelector(".lista-filmes").innerHTML = `
+    document.querySelector(".lista-filmes").innerHTML += `
     <div class="card-filme">
             <img src="img/${filmeAtual.foto}">
             <h3>${filmeAtual.titulo}</h3>
@@ -51,11 +58,12 @@ function FnMontarCartao(filmeAtual){
 }
 
 
-    
+ //DOM - Document Object Model   
 FnMontarCartao(filme1)
 FnMontarCartao(filme2)
 FnMontarCartao(filme3)
 FnMontarCartao(filme4)
+FnMontarCartao(filme5)
 
 //dom
 
