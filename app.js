@@ -1,4 +1,3 @@
-console.log("Funcionou")
 
 //JSON = JavaScript object notation
 
@@ -59,17 +58,24 @@ function FnMontarCartao(filmeAtual){
 
 
  //DOM - Document Object Model   
-FnMontarCartao(filme1)
-FnMontarCartao(filme2)
-FnMontarCartao(filme3)
-FnMontarCartao(filme4)
-FnMontarCartao(filme5)
+//FnMontarCartao(filme1)
 
-//dom
 
-document.querySelector("h1").innerText = "oi"
+let todosOsFilmes = [filme1, filme2, filme3, filme4, filme5]
 
-console.log(document.querySelector("h1"))
+todosOsFilmes.forEach((filmeAtual) => {
+    document.querySelector(".lista-filmes").innerHTML += `
+    <div class="card-filme">
+    <img src="img/${filmeAtual.foto}">
+    <h3>${filmeAtual.titulo}</h3?>
+    <span>🌟 ${filmeAtual.avaliacao}</span>
+    </div>
+    `
+})
+
+
+
+
 
 
 
