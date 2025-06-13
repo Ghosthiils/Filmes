@@ -47,34 +47,54 @@ let filme5 = {
 
 
 
-function FnMontarCartao(filmeAtual){
-    document.querySelector(".lista-filmes").innerHTML += `
-    <div class="card-filme">
-            <img src="img/${filmeAtual.foto}">
-            <h3>${filmeAtual.titulo}</h3>
-            <span>⭐ ${filmeAtual.avaliacao}</span>
-        </div> `
-}
+// function FnMontarCartao(filmeAtual){
+//     document.querySelector(".lista-filmes").innerHTML += `
+//     <div class="card-filme">
+//             <img src="img/${filmeAtual.foto}">
+//             <h3>${filmeAtual.titulo}</h3>
+//             <span>⭐ ${filmeAtual.avaliacao}</span>
+//         </div> `
+// }
 
 
  //DOM - Document Object Model   
 //FnMontarCartao(filme1)
 
 
-let todosOsFilmes = [filme1, filme2, filme3, filme4, filme5]
+// let todosOsFilmes = [filme1, filme2, filme3, filme4, filme5]
 
-todosOsFilmes.forEach((filmeAtual) => {
-    document.querySelector(".lista-filmes").innerHTML += `
-    <div class="card-filme">
-    <img src="img/${filmeAtual.foto}">
-    <h3>${filmeAtual.titulo}</h3?>
-    <span>🌟 ${filmeAtual.avaliacao}</span>
-    </div>
-    `
-})
+// todosOsFilmes.forEach((filmeAtual, indice) => {
+//     document.querySelector(".lista-filmes").innerHTML += `
+//     <div class="card-filme">
+//     <img src="img/${filmeAtual.foto}">
+//     <h3>${filmeAtual.titulo}</h3?>
+//     <span>🌟 ${filmeAtual.avaliacao}</span>
+//     </div>
+//     `
+
+    
+// })
 
 
+async function fnPegarFilmes() {
+    let filmes = await fetch("dados-filmes.json")
+    let filmesTratados = await filmes.json();
 
+    filmesTratados.slice(0,4).forEach((filmeAtual) => {
+      document.querySelector(".lista-filmes").innerHTML += `
+      <div class="card-filme">
+      <img src="${filmeAtual.foto}">
+      <h3>${filmeAtual.titulo}</h3?>
+      <span>🌟 ${filmeAtual.avaliacao}</span>
+      </div>
+      `
+
+
+     
+    })
+  }
+  
+  fnPegarFilmes();
 
 
 
